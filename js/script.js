@@ -7,10 +7,13 @@
 
   ticket.setAttribute("data-printed", "false");
 
-  requestAnimationFrame(function () {
+  // Pausa de arranque, como el motor de una impresora de tickets antes de empezar a sacar papel.
+  setTimeout(function () {
     requestAnimationFrame(function () {
-      ticket.setAttribute("data-printing", "true");
-      ticket.setAttribute("data-printed", "true");
+      requestAnimationFrame(function () {
+        ticket.setAttribute("data-printing", "true");
+        ticket.setAttribute("data-printed", "true");
+      });
     });
-  });
+  }, 450);
 })();
