@@ -86,12 +86,12 @@ button:focus-visible {
 .panel--head { padding-top: 54px; display: flex; gap: 28px; align-items: flex-start; }
 
 .portrait {
-  width: 86px;
-  height: 86px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
   flex: none;
-  border: 2px solid var(--blue);
+  border: 3px solid var(--blue);
 }
 
 .name {
@@ -294,6 +294,7 @@ button:focus-visible {
   .ticket { padding: 10px 24px 34px; }
   .panel { padding: 32px 0; }
   .panel--head { padding-top: 40px; flex-direction: column; gap: 16px; }
+  .portrait { width: 96px; height: 96px; }
 
   .exp-head, .edu-row {
     flex-wrap: wrap;
