@@ -1,6 +1,9 @@
 # Portfolio — Claudia Ortega Martín
 
-Portfolio de una página, HTML/CSS/JS plano, sin build. Desplegado en GitHub Pages.
+Portfolio de una página, HTML/CSS/JS plano, sin build.
+
+- https://claudia-ortega.pages.dev (Cloudflare Pages)
+- https://claudia-ortegamartin.github.io/portfolio-claudia (GitHub Pages)
 
 ## Desarrollo local
 
@@ -30,4 +33,4 @@ git config core.hooksPath .githooks
 
 ## Despliegue
 
-GitHub Actions (`.github/workflows/deploy.yml`) despliega a GitHub Pages en cada push a `master`.
+GitHub Actions (`.github/workflows/deploy.yml`) despliega a GitHub Pages y a Cloudflare Pages en cada push a `master`.
