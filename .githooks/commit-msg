@@ -1,0 +1,12 @@
+#!/bin/sh
+# Valida Conventional Commits: tipo(scope opcional): descripcion
+pattern='^(feat|fix|docs|style|refactor|perf|test|chore|ci)(\([a-z0-9-]+\))?: .{1,100}'
+msg="$(head -1 "$1")"
+
+if ! echo "$msg" | grep -qE "$pattern"; then
+  echo "Commit rechazado: el mensaje no sigue Conventional Commits." >&2
+  echo "Formato: tipo(scope opcional): descripcion" >&2
+  echo "Tipos: feat fix docs style refactor perf test chore ci" >&2
+  echo "Ejemplo: feat(contacto): anadir enlace a GitHub" >&2
+  exit 1
+fi
