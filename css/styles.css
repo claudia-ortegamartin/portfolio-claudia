@@ -267,17 +267,18 @@ button:focus-visible {
 }
 .cv-button:hover { background: var(--blue-deep); border-color: var(--blue-deep); color: #fff; }
 
-.barcode {
-  display: flex;
-  align-items: stretch;
-  gap: 2px;
-  height: 38px;
+.barcode-link {
+  display: block;
   margin: 40px 0 14px;
 }
-.barcode span { background: var(--ink); width: 2px; }
-.barcode span:nth-child(3n) { width: 3px; }
-.barcode span:nth-child(5n) { width: 1px; }
-.barcode span:nth-child(7n) { background: var(--accent-deep); }
+.barcode-link:hover { opacity: 0.75; }
+.barcode-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+#barcode {
+  display: block;
+  max-width: 100%;
+  height: 34px;
+}
 
 .thanks {
   margin: 0;

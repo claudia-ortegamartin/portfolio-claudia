@@ -1,4 +1,15 @@
 (function () {
+  if (window.JsBarcode) {
+    JsBarcode("#barcode", "https://github.com/claudia-ortegamartin", {
+      format: "CODE128",
+      lineColor: "#16293a",
+      width: 1,
+      height: 34,
+      displayValue: false,
+      margin: 0,
+    });
+  }
+
   var ticket = document.getElementById("ticket");
   if (!ticket) return;
 
