@@ -51,6 +51,7 @@ button:focus-visible {
 
 .backdrop {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   padding: 72px 24px 100px;
