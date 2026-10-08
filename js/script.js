@@ -10,10 +10,23 @@
     });
   }
 
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var toTop = document.getElementById("to-top");
+  if (toTop) {
+    var syncToTop = function () {
+      toTop.setAttribute("data-visible", window.scrollY > 500 ? "true" : "false");
+    };
+    window.addEventListener("scroll", syncToTop, { passive: true });
+    syncToTop();
+
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  }
+
   var ticket = document.getElementById("ticket");
   if (!ticket) return;
-
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) return;
 
   var STALL = 350;   // el motor arranca antes de mover papel
