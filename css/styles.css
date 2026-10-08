@@ -269,7 +269,8 @@ button:focus-visible {
 .cv-button:hover { background: var(--blue-deep); border-color: var(--blue-deep); color: #fff; }
 
 .barcode-link {
-  display: block;
+  display: flex;
+  justify-content: center;
   margin: 40px 0 14px;
 }
 .barcode-link:hover { opacity: 0.75; }
