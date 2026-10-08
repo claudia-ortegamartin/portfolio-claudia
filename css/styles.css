@@ -305,12 +305,24 @@ button:focus-visible {
   .exp-date, .edu-org { font-size: 12px; opacity: 0.85; }
 }
 
-.ticket[data-printed="false"] {
-  clip-path: inset(0 0 100% 0);
+/* El papel sale de la ranura con el borde de abajo recto (sigue unido al rollo)
+   y solo al rasgarlo aparece el pico inferior. */
+.ticket[data-stage="hidden"] {
+  clip-path: inset(calc(var(--tooth) * -1) 0 100% 0);
 }
-.ticket[data-printed="true"] {
+/* El avance solo se anima hasta pasar el borde inferior de la pantalla: lo que
+   queda por debajo no se ve, y estirarlo haria el arranque eterno. */
+.ticket[data-stage="feeding"] {
+  clip-path: inset(calc(var(--tooth) * -1) 0 var(--feed-stop, 0%) 0);
+  transition: clip-path 850ms steps(26, end);
+}
+.ticket[data-stage="torn"] {
   clip-path: inset(calc(var(--tooth) * -1) 0 calc(var(--tooth) * -1) 0);
+  transition: clip-path 110ms ease-out;
 }
-.ticket[data-printing="true"] {
-  transition: clip-path 1100ms ease-out;
+
+/* Sin papel fuera no hay bordes; al asomar, el de arriba ya sale rasgado. */
+.ticket[data-stage="hidden"] .ticket-edge,
+.ticket[data-stage="feeding"] .ticket-edge--bottom {
+  opacity: 0;
 }
